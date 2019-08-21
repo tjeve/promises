@@ -80,17 +80,17 @@ $(document).ready(function() {
         console.log("No NO NO NO!!!!", error)
     }     
 
-    function addNumbers (x, y) {
+    function addNumbers (x, y) {        //Step 1 Creates function that takes 2 numbers
         
-        var myPromise = new Promise(function(resolve, reject) {
+        var myPromise = new Promise(function(resolve, reject) { //creates a promise that resolves to add numbers together if numbers, 
             if (typeof x === "number" && typeof y === "number") {
                 resolve(x + y)
             } else {reject("Either x, y or both are not numbers!")}
         })
-        return myPromise
+        return myPromise    //REMEMBER: functions without returns, return as undefined.
     }
-    addNumbers(3, 7)
-        .then(onResolve)
-        .catch(onReject)
+    addNumbers(3, 7)    //This runs the function (which returns a promise)
+        .then(onResolve)    //this explains what to do with the function if successful.
+        .catch(onReject)    //this explains what to do with the function if rejected.
 
 })
